@@ -2,6 +2,9 @@
     .news-letter{
         width: 50%;
     }
+    .container{
+        width: 50%;
+        height: 50vh;
 }
 body::before{
     display: block;
