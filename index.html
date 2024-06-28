@@ -12,17 +12,19 @@
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
         <div class="container">
             <a href="#" class="navbar-brand">Frontend Developer</a>
-            
-            <div id="navmenu">
-                <ul class="navbar-nav ms-auto text-light">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#learn" class="nav-link">What you have learned</a>
+                    </li>
                     <li class="nav-item">
                         <a href="#Questions" class="nav-link">Questions</a>
                     </li>
                     <li class="nav-item">
                         <a href="#Instructors" class="nav-link">Instructors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="ASSIGNMENT.docx" class="nav-link">Assignment</a>
                     </li>
                 </ul>
             </div>
@@ -35,8 +37,8 @@
                 <di>
                     <h1>Become a <span class="text-warning">Web Developer</span> </h1>
                <p class="lead">We focus on teaching students the fundamental of  the latest and great technologies to prepare on their first dev role</p>
-                <a class="btn btn-primary btn-lg my-4 " data-bs-toggle="modal" href="studen-resgiter-form.html">Start enrollment</a>
-            </div>
+               <a class="btn btn-primary btn-lg my-4 " data-bs-toggle="modal" href="studen-register-form.html">Start enrollment</a>
+            </di>
                 <img  class="img-fluid w-50 d-none d-sm-block" src="computer.jpg">
             </div>
             
@@ -117,81 +119,6 @@ Considerations: Fixed schedules and commuting.
                 </div>
             </div>
         </div> 
-    </section>
-     <section id="learn" class="p-5 bg-dark text-light">
-<div class="container">
-    <div class="row align-items-center justify-content-between">
-        <div class="col-md">
-            <img src="html image.PNG" class="img-fluid">
-        </div>
-        <div class="col-md p-5">
-            <h2>Learn the fundamental of HTML</h2>
-            <p class="lead">**HTML Fundamentals: A Concise Overview**
-
-HTML (HyperText Markup Language) is the standard markup language for creating web pages. It provides the structure and content of a webpage. Here are the fundamental aspects of HTML:
-
-1. **Elements and Tags**:
-   - HTML consists of a series of elements enclosed within tags (e.g., `<p>` for paragraphs, `<h1>` for headings).
-   - Tags define the purpose and formatting of content (e.g., headings, paragraphs, links).
-
-2. **Document Structure**:
-   - An HTML document starts with `<!DOCTYPE html>` to indicate the document type.
-   - The `<html>` element contains the entire webpage.
-   - Inside `<html>`, we have `<head>` (for metadata) and `<body>` (for visible content).
-
-3. **Basic Tags**:
-   - `<h1>` to `<h6>`: Headings (largest to smallest).
-   - `<p>`: Paragraphs.
-   - `<a href="url">`: Links.
-   - `<img src="image_url" alt="description">`: Images.
-
-4. **Attributes**:
-   - Tags can have attributes (e.g., `href`, `src`, `alt`) that provide additional information.
-   - Attributes modify the behavior or appearance of elements.
-
-5. **Lists and Formatting**:
-   - `<ul>`: Unordered lists (bulleted).
-   - `<ol>`: Ordered lists (numbered).
-   - `<li>`: List items.
-   - `<strong>`: Bold text.
-   - `<em>`: Italic text.
-
-6. **Semantic Elements**:
-   - `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<footer>`: Provide meaning and structure.
-   - Use them to organize content logically.
-
-7. **Comments**:
-   - `<!-- This is a comment -->`: Comments don't affect the display but provide notes for developers.
-
-Remember, HTML is the foundation of web development. Explore more elements, attributes, and styling to create rich and interactive web pages! ¹²
-
-![HTML](https://i.imgur.com/1Xx8QkT.png)
-
-¹: [HTML Tutorial - W3Schools](https://www.w3schools.com/html/)
-²: [HTML Basics - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics)
-
-Source: Conversation with Copilot, 6/28/2024
-(1) HTML Tutorial - W3Schools. https://www.w3schools.com/html/.
-(2) Introduction to HTML - W3Schools. https://www.w3schools.com/html/html_intro.asp.
-(3) Overview of HTML | web.dev. https://web.dev/learn/html/overview/.
-(4) HTML and CSS Fundamentals - Medium. https://medium.com/@mahendrjy/html-and-css-fundamentals-6b8f7d90911b.
-(5) HTML basics - Learn web development | MDN - MDN Web Docs. https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics.
-(6) HTML Tutorial - GeeksforGeeks. https://www.geeksforgeeks.org/html-tutorial/.
-(7) HTML for Beginners - freeCodeCamp.org. https://www.freecodecamp.org/news/html-crash-course/.</p>
-            <p>
-                JavaScript was initially created to “make web pages alive”.
-
-The programs in this language are called scripts. They can be written right in a web page’s HTML and run automatically as the page loads.
-
-Scripts are provided and executed as plain text. They don’t need special preparation or compilation to run.
-
-In this aspect, JavaScript is very different from another language called Java.
-            </p>
-            <a href="" class="btn btn-light mt-3"><i class="bi bi-chevron-right"></i>
-                Read More</a>
-        </div>
-    </div>
-</div>
     </section>
     <section id="learn" class="p-5">
 <div class="container">
@@ -289,13 +216,13 @@ You will learn the various aspects of how React does this in the rest of this tu
 </div>
             </section>
             <section id="instructor" class="bg-primary p-5">
-                <div class="container">
+                <div class="container ">
                     <h2 class="text-center text-white">Our Instructors</h2>
                     <p class="text-center text-white mb-5">Our Instructor have +3 years working experience has a webdeveloper in the Academy</p>
                     <div class=" row g-4">
-                        <div class="col md-6 col-lg-3">
-                            <div class="card bg-light">
-                                <div class="card-body text-center">
+                        <div class="col md-6  >
+                            <div class="card bg-light align-items-center">
+                                <div class="card-body  ">
                                     <img src="nath.jpg" class="rounded-circle mp-3">
                                     <h3 class="card-title mp-3">Nathaniel John Agang</h3>
                                     <p class="card-text">A web developer instructor fantsuam foundation Zittnet Academy.</p>
@@ -318,13 +245,13 @@ You will learn the various aspects of how React does this in the rest of this tu
                             <h2 class="text-center mb-4">Contact Info</h2>
                             <ul class="list-group list-group-flush lead">
                                 <li class="list-group-item">
-                                    <span class="Fw-bold">Main Location:</span>fantsuam foundation bayan loco kafanchan
+                                    <span class="Fw-bold">Main Location:</span>bayan loco kafanchan
                                 </li>
                                 <li class="list-group-item">
-                                    <span class="Fw-bold">phone:</span>0 90126486819
+                                    <span class="Fw-bold">phone:</span>090126486819
                                 </li>
                                 <li class="list-group-item">
-                                    <span class="fw-bold">Email:</span >nathanielagang2023@gmail.com
+                                    <span class="fw-bold">Email:</span>fantsuamfounadation.org
                                 </li>
                             </ul>
                         </div>
