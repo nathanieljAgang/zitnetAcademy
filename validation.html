@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="validation.css">
+</head>
+<body class="bg-secondary">
+    <div class="container">
+        <div class="justify-content-between align-items-center text-center">
+            <h3 class="mb-3 mt-20 mb-md-0">Registration form</h3>
+            <div class="input-group login-input">
+        <form action="website.html" method="get" id="studen-register-form" name="studen-register-form" class="bg-dark text-light p-5 text-center mx-auto w-500 w-300" onsubmit="return validate()">
+            <div class="row">
+                <div class="col">
+                    <label for="name" class="d-block">Enter Student Name: <input type="text" id="name" name="name" placeholder="Enter your name" class="form-control "><label>
+                    <span id="spnIsNameValid"></span>
+
+                    <label for="email" class="d-block">Email Address: <input type="email" id="email" name="email" placeholder="Enter your email address" class="form-control "><label>
+                       <span id="spnIsEmailValid"></span>
+                
+                
+                       <label for="password" class="d-block">Password: <input type="password" id="password" name="password" placeholder="Enter your password" class="form-control"></label>
+                       <span id="spnIsPasswordValid"></span>
+                       
+                       <label for="confirmPassword" class="d-block">Confirm Password: <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" class="form-control"></label>
+                       <span id="spnIsConfirmPasswordValid"></span>
+                       
+                
+                    <label for="phoneNumber" class="d-block">Phone Number: <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" class="form-control"></label>
+                        <span id="spnIsPhoneNumberValid"></span>
+
+                    <label for="qualification" class="d-block">Qualification:
+                        <select class="form-control" id="qualification">
+                            <option value="" id="qualification">--Select Qualification--</option>
+                            <option value="Certificate" id="Certificate">Certificate in Computer</option>
+                            <option value="Diploma">Diploma in Computer</option>
+                            </select>
+                            </label>
+                            <span id="spnIsQualificationValid"></span>
+                
+                <input type="submit" value="Submit" name="submit" class="btn-lg btn-primary">
+            </div>
+           
+        </form>
+      
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/JavaScript">
+       function validate() {
+    let isNameValid = true;
+    let isEmailValid = true;
+    let isPasswordValid = true;
+    let isConfirmPasswordValid = true;
+    let isPhoneNumberValid = true;
+    let isQualificationValid = true;
+
+    const nameInput = document.getElementById("name").value;
+    const emailInput = document.getElementById("email").value;
+    const passwordInput = document.getElementById("password").value;
+    const confirmPasswordInput = document.getElementById("confirmPassword").value;
+    const phoneNumberInput = document.getElementById("phoneNumber").value;
+    const qualificationInput = document.getElementById("qualification").value;
+
+    if (nameInput === "") {
+        document.getElementById("spnIsNameValid").innerHTML = "Please enter your full name";
+        document.getElementById("spnIsNameValid").style.color = "red";
+        isNameValid = false;
+    } else {
+        document.getElementById("spnIsNameValid").innerHTML = "Valid";
+        document.getElementById("spnIsNameValid").style.color = "green";
+    }
+
+    if (emailInput === "") {
+        document.getElementById("spnIsEmailValid").innerHTML = "Please enter your email";
+        document.getElementById("spnIsEmailValid").style.color = "red";
+        isEmailValid = false;
+    } else {
+        document.getElementById("spnIsEmailValid").innerHTML = "Valid";
+        document.getElementById("spnIsEmailValid").style.color = "green";
+    }
+
+    if (passwordInput === "") {
+        document.getElementById("spnIsPasswordValid").innerHTML = "Please enter your password";
+        document.getElementById("spnIsPasswordValid").style.color = "red";
+        isPasswordValid = false;
+    } else {
+        document.getElementById("spnIsPasswordValid").innerHTML = "Valid";
+        document.getElementById("spnIsPasswordValid").style.color = "green";
+    }
+
+    if (confirmPasswordInput === "") {
+        document.getElementById("spnIsConfirmPasswordValid").innerHTML = "Please enter your confirm password";
+        document.getElementById("spnIsConfirmPasswordValid").style.color = "red";
+        isConfirmPasswordValid = false;
+    } else if (confirmPasswordInput !== passwordInput) {
+        document.getElementById("spnIsConfirmPasswordValid").innerHTML = "Confirm password does not match with password";
+        document.getElementById("spnIsConfirmPasswordValid").style.color = "red";
+        isConfirmPasswordValid = false;
+    } else {
+        document.getElementById("spnIsConfirmPasswordValid").innerHTML = "Valid";
+        document.getElementById("spnIsConfirmPasswordValid").style.color = "green";
+    }
+
+    if (phoneNumberInput === "") {
+        document.getElementById("spnIsPhoneNumberValid").innerHTML = "Please enter your phone number";
+        document.getElementById("spnIsPhoneNumberValid").style.color = "red";
+        isPhoneNumberValid = false;
+    } else {
+        document.getElementById("spnIsPhoneNumberValid").innerHTML = "Valid";
+        document.getElementById("spnIsPhoneNumberValid").style.color = "green";
+    }
+
+    if (qualificationInput === "") {
+        document.getElementById("spnIsQualificationValid").innerHTML = "Please select from the option";
+        document.getElementById("spnIsQualificationValid").style.color = "red";
+        isQualificationValid = false;
+    } else {
+        document.getElementById("spnIsQualificationValid").innerHTML = "Valid";
+        document.getElementById("spnIsQualificationValid").style.color = "green";
+    };
+    
+    if (
+        !isNameValid ||
+        !isEmailValid ||
+        !isPasswordValid ||
+        !isConfirmPasswordValid ||
+        !isPhoneNumberValid ||
+        !isQualificationValid
+    ) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
+    </script>
+    
+</body>
+</html>
