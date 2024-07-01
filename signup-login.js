@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        if (qualification === 'diploma') {
+        if (qualification === 'certificate') {
             alert('Sign up failed: Diploma in Computer required.');
             return;
         }
@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (user) {
             alert('Login successful!');
             loginError.textContent = '';
+            window.location.href = 'studen-register-form.html';
         } else {
             loginError.textContent = 'Invalid email or password';
         }
