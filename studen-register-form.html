@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="studen.css">
     <title>Enrollment form</title>
 </head>
@@ -13,96 +13,94 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="name">Full Name:</label>
-            <input type="text" class="form-control" id="name" placeholder="full name">
+            <input type="text" class="form-control" id="name" placeholder="full name" required>
           </div>
           <div class="form-group col-md-6">
             <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
           </div>
           <div class="form-group col-md-6">
             <label for="inputPassword4">Password</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+            <input type="password" class="form-control" id="inputPassword4" placeholder="Password" required>
           </div>
-          </div>
-        <div class="form-group">
-          <label for="inputAddress">Address</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="address">
         </div>
         <div class="form-group">
-          <label for="phone-number">phone Number</label>
-          <input type="number" class="form-control" id="phone-number" placeholder="Enter your phone number">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="address" required>
+        </div>
+        <div class="form-group">
+          <label for="phone-number">Phone Number</label>
+          <input type="number" class="form-control" id="phone-number" placeholder="Enter your phone number" required>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity">
+            <input type="text" class="form-control" id="inputCity" required>
           </div>
           <div class="form-group col-md-4">
             <label for="inputState">State</label>
-            <input type="text" class="form-control" id="inputCity" placeholder="enter your state">
+            <input type="text" class="form-control" id="inputState" placeholder="enter your state" required>
           </div>
           <div class="form-group col-md-2">
             <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
+            <input type="text" class="form-control" id="inputZip" required>
           </div>
           <div class="form-group col-md-2">
             <label for="course">Course</label>
-            <select>
+            <select class="form-control" required>
               <option value="" default>--select--</option>
               <option value="responsive-web-design">Responsive Web Design</option>
-              <option value="JavaScript-data-structure-and-Algorithms">JavaScript data structure and Algorithms/option>
-              <option value="frontend-developer">frontend Developer</option>
+              <option value="JavaScript-data-structure-and-Algorithms">JavaScript data structure and Algorithms</option>
+              <option value="frontend-developer">Frontend Developer</option>
             </select>
           </div>
         </div>
         <div class="form-group">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <input class="form-check-input" type="checkbox" id="gridCheck" required>
             <label class="form-check-label" for="gridCheck">
               Check me out
             </label>
           </div>
         </div>
-        <button type="submit"  value="submit" class="btn-primary" id="submit">submit</button>
+        <button type="submit" class="btn btn-primary" id="submit">Submit</button>
       </form>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script>
-    // app.js
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+    document.querySelector('form').addEventListener('submit', function (event) {
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('inputEmail4');
+        const passwordInput = document.getElementById('inputPassword4');
+        const phoneNumberInput = document.getElementById('phone-number');
+        const stateInput = document.getElementById('inputState');
+        const courseSelect = document.querySelector('select');
+        const checkboxInput = document.getElementById('gridCheck');
 
-// Validate form data before submission
-document.querySelector('form').addEventListener('submit', function (event) {
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('inputEmail4');
-    const passwordInput = document.getElementById('inputPassword4');
-    const phoneNumberInput = document.getElementById('phone-number');
-
-    // Example validation (customize as needed)
-    if (nameInput.value.trim() === '') {
-        alert('Please enter your full name.');
-        event.preventDefault();
-    }
-
-if (emailInput.value.trim() === '') {
-        alert('email address.');
-        event.preventDefault();
-    }
-   if (passwordInput.value.trim() === '') {
-        alert('please enter your password.');
-        event.preventDefault();
-    }
-    if (phoneNumberInput.value.trim() === '') {
-        alert('Please enter your phone number.');
-        event.preventDefault();
-    }
-    
-submit();
-    
-});
-
-  
-</script>
-
+        if (nameInput.value.trim() === '') {
+            alert('Please enter your full name.');
+            event.preventDefault();
+        } else if (emailInput.value.trim() === '') {
+            alert('Please enter your email address.');
+            event.preventDefault();
+        } else if (passwordInput.value.trim() === '') {
+            alert('Please enter your password.');
+            event.preventDefault();
+        } else if (phoneNumberInput.value.trim() === '') {
+            alert('Please enter your phone number.');
+            event.preventDefault();
+        } else if (stateInput.value.trim() === '') {
+            alert('Please enter your state.');
+            event.preventDefault();
+        } else if (courseSelect.value === '') {
+            alert('Please select a course.');
+            event.preventDefault();
+        } else if (!checkboxInput.checked) {
+            alert('Please check the box.');
+            event.preventDefault();
+        }
+    });
+    </script>
 </body>
 </html>
