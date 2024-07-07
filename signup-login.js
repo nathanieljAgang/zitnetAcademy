@@ -33,6 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        if (localStorage.getItem(email)) {
+            alert('Email is already registered.');
+            return;
+        } else {
+            localStorage.setItem(email, password);
+            alert('Signup successful.');
+        }
+
         users.push({ email, password });
         alert('Sign up successful!');
         signUpForm.reset();
@@ -47,13 +55,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = document.getElementById('login-email').value;
         const password = document.getElementById('login-password').value;
 
-        const user = users.find(user => user.email === email && user.password === password);
-        if (user) {
-            alert('Login successful!');
-            loginError.textContent = '';
-            window.location.href = 'studen-register-form.html';
+        const storedPassword = localStorage.getItem(email);
+
+        if (storedPassword) {
+            if (storedPassword === password) {
+                alert('Login successful.');
+                 window.location.href = 'vscode.html';
+            } else {
+                alert('Incorrect password.');
+            }
         } else {
-            loginError.textContent = 'Invalid email or password';
+            alert('Email not registered.');
         }
     });
 });
