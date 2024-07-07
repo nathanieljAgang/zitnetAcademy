@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Forum</title>
+    <title>Leadership Forum</title>
     <link rel="stylesheet" href="furum.css">
 </head>
 <body>
@@ -13,12 +13,15 @@
             <form id="signinForm">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
+                <label for="profilePic">Profile Picture:</label>
+                <input type="file" id="profilePic" name="profilePic" accept="image/*" required>
                 <button type="submit">Sign In</button>
             </form>
+            <button id="loginButton" class="hidden">Log In</button>
         </div>
 
-        <div class="forum">
-            <h2>Post a Problem or Solution</h2>
+        <div class="forum hidden">
+            <h2>Post a Message</h2>
             <form id="postForm">
                 <label for="postTitle">Title:</label>
                 <input type="text" id="postTitle" name="postTitle" required>
@@ -26,6 +29,7 @@
                 <textarea id="postContent" name="postContent" required></textarea>
                 <button type="submit">Post</button>
             </form>
+            <button id="logoutButton">Logout</button>
             <div id="posts"></div>
         </div>
     </div>
