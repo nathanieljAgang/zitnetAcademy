@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (localStorage.getItem(email)) {
             alert('Email is already registered.');
+            signUpFormContainer.classList.toggle('hidden');
+            loginFormContainer.classList.remove('hidden')
             return;
         } else {
             localStorage.setItem(email, password);
