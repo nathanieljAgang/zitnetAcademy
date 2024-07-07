@@ -15,6 +15,39 @@ document.addEventListener('DOMContentLoaded', () => {
         loginButton.classList.remove('hidden');
     }
 
+    const loadPosts = () => {
+        const posts = JSON.parse(localStorage.getItem('posts')) || [];
+        postsDiv.innerHTML = '';
+        posts.forEach(post => {
+            const postDiv = document.createElement('div');
+            postDiv.classList.add('post');
+
+            const postTitleElement = document.createElement('h3');
+            postTitleElement.textContent = post.title;
+
+            const postContentElement = document.createElement('p');
+            postContentElement.textContent = post.content;
+
+            const postInfoDiv = document.createElement('div');
+            postInfoDiv.classList.add('post-info');
+
+            const postUserImg = document.createElement('img');
+            postUserImg.src = post.profilePicUrl;
+
+            const postUserElement = document.createElement('span');
+            postUserElement.textContent = `Posted by: ${post.username}`;
+
+            postInfoDiv.appendChild(postUserImg);
+            postInfoDiv.appendChild(postUserElement);
+
+            postDiv.appendChild(postTitleElement);
+            postDiv.appendChild(postContentElement);
+            postDiv.appendChild(postInfoDiv);
+
+            postsDiv.appendChild(postDiv);
+        });
+    };
+
     signinForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const username = document.getElementById('username').value;
@@ -29,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(`Welcome, ${signedInUser}!`);
             signinDiv.classList.add('hidden');
             forumDiv.classList.remove('hidden');
+            loadPosts();
         }
         reader.readAsDataURL(profilePic);
     });
@@ -40,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(`Welcome back, ${signedInUser}!`);
             signinDiv.classList.add('hidden');
             forumDiv.classList.remove('hidden');
+            loadPosts();
         } else {
             alert('No previous sign-in details found. Please sign in first.');
         }
@@ -55,33 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const postTitle = document.getElementById('postTitle').value;
         const postContent = document.getElementById('postContent').value;
 
-        const postDiv = document.createElement('div');
-        postDiv.classList.add('post');
-        
-        const postTitleElement = document.createElement('h3');
-        postTitleElement.textContent = postTitle;
+        const posts = JSON.parse(localStorage.getItem('posts')) || [];
+        posts.push({
+            title: postTitle,
+            content: postContent,
+            username: signedInUser,
+            profilePicUrl: profilePicUrl
+        });
 
-        const postContentElement = document.createElement('p');
-        postContentElement.textContent = postContent;
-
-        const postInfoDiv = document.createElement('div');
-        postInfoDiv.classList.add('post-info');
-        
-        const postUserImg = document.createElement('img');
-        postUserImg.src = profilePicUrl;
-
-        const postUserElement = document.createElement('span');
-        postUserElement.textContent = `Posted by: ${signedInUser}`;
-
-        postInfoDiv.appendChild(postUserImg);
-        postInfoDiv.appendChild(postUserElement);
-
-        postDiv.appendChild(postTitleElement);
-        postDiv.appendChild(postContentElement);
-        postDiv.appendChild(postInfoDiv);
-
-        postsDiv.appendChild(postDiv);
-
+        localStorage.setItem('posts', JSON.stringify(posts));
+        loadPosts();
         postForm.reset();
     });
 
@@ -91,5 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('You have been logged out.');
         forumDiv.classList.add('hidden');
         signinDiv.classList.remove('hidden');
+        loginButton.classList.remove('hidden');
+        signinForm.reset();
     });
 });
