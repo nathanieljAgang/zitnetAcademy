@@ -67,6 +67,19 @@ button:hover {
     margin-top: 0;
 }
 
+.post img {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
 .hidden {
     display: none;
+}
+
+.post-info {
+    display: flex;
+    align-items: center;
 }
