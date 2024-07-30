@@ -9,7 +9,7 @@ $('document').ready(function (params) {
        
     } ;
     $('#img1').mouseenter(function (params) {
-        $('#img1,').css('width','500px');
+        $('#img1').css('width','500px');
     });
     $('#img1').mouseleave(function (params) {
         $('#img1').css('width','250px');
