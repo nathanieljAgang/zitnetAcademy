@@ -15,13 +15,13 @@ $('document').ready(function (params) {
         $('#img1').css('width','250px');
     });
      $('#img2').mouseenter(function (params) {
-        $('#img2,').css('width','500px');
+        $('#img2').css('width','500px');
     });
     $('#img2').mouseleave(function (params) {
         $('#img2').css('width','250px');
     });
     $('#img3').mouseenter(function (params) {
-        $('#img3,').css('width','500px');
+        $('#img3').css('width','500px');
     });
     $('#img3').mouseleave(function (params) {
         $('#img3').css('width','250px');
